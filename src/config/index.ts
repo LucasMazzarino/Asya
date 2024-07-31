@@ -100,9 +100,9 @@ export const ICONS_HOME = [
     description : "Protegemos tus datos y transacciones con los más altos estándares de seguridad, para que puedas comprar con tranquilidad."
   },
   {
-    name:"Puedes convertirte en Revendedor",
+    name:"Precios Mayoristas",
     Icon: DollarSign,
-    description : "Accede a precios mayorista con grandes descuentos, ahorrando dinero en tus compras."
+    description : "Puedes acceder a increibles descuentos por compras mayoristas. Te interesa? ponte en contacto con nosotros!"
   },
 ]
 

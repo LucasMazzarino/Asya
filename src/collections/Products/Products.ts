@@ -9,6 +9,10 @@ import { BeforeChangeHook } from "payload/dist/collections/config/types";
 
 export const Products: CollectionConfig = {
   slug: "products",
+  labels: {
+    singular: 'Producto',
+    plural: 'Productos',
+  },
   admin: {
     useAsTitle: "name"
   },

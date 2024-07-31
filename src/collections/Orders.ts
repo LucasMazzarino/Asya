@@ -12,11 +12,15 @@ const yourOwn: Access = ({req: {user}}) => {
 
 export const Orders: CollectionConfig = {
   slug: "orders",
+  labels: {
+    singular: 'Orden',
+    plural: 'Ordenes',
+  },
   admin: {
     useAsTitle: "tus ordenes",
     description: "Suma de todas tus ordenes",
     defaultColumns:['id','_isPaid', 'createdAt'],
-    hideAPIURL: true
+    hideAPIURL: true,
   },
   access: {
     read: yourOwn,

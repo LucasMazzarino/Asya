@@ -44,7 +44,7 @@ export const EmailTemplate = ({
           </Section>
           <Text style={paragraph}>Hola!</Text>
           <Text style={paragraph}>
-           Bienvenidos a Gemstone, tienda online de joyas en Uruguay
+           Bienvenidos a Asya, tienda online de joyas en Uruguay
            <br />
             {actionLabel}.
           </Text>

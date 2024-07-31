@@ -38,7 +38,7 @@ const ProductListing = ({
   const validUrls = product.images
     .map(({ image }) => {
       const imageUrl = typeof image === 'string' ? image : image?.url
-      return imageUrl ? imageUrl.replace('http://localhost:3000/media/', 'https://cdn.gemstonuruguay.com/') : ''
+      return imageUrl ? imageUrl.replace('http://localhost:3000/media/', 'https://pub-3776ca07607e43cd95caba4dbe54049a.r2.dev/') : ''
     })
     .filter(Boolean) as string[]
 

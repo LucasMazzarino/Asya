@@ -18,7 +18,7 @@ const CartItem = ({ product, count, userType}: CartItemProps) => {
 
   const imageUrl = typeof image === "string" 
   ? image 
-  : image.url?.replace('http://localhost:3000/media/', 'https://cdn.gemstonuruguay.com/');
+  : image.url?.replace('http://localhost:3000/media/', 'https://pub-3776ca07607e43cd95caba4dbe54049a.r2.dev/');
 
 
   const subtotal = userType === 'Wholesale' ?

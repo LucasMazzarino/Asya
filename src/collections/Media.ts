@@ -40,6 +40,10 @@ const isAdminOrHasAccessToImages = (): Access => async ({
 
 export const Media: CollectionConfig = {
   slug: "media",
+  labels: {
+    singular: 'Foto',
+    plural: 'Fotos',
+  },
   hooks: {
     beforeChange: [({ req, data }) => {
       return { ...data, user: req.user.id }

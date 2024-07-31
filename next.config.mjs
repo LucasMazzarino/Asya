@@ -6,13 +6,10 @@ const nextConfig = {
 				protocol: "http",
 				hostname: "localhost",
 			},
+			
 			{
 				protocol: "https",
-				hostname: "gemstoneuruguay-production.up.railway.app",
-			},
-			{
-				protocol: "https",
-				hostname: "www.gemstonuruguay.com",
+				hostname: "www.asya.uy",
 			},
 			{
 				protocol: "https",
@@ -21,6 +18,10 @@ const nextConfig = {
 			{
 				protocol: "https",
 				hostname: "cdn.gemstonuruguay.com",
+			},
+			{
+				protocol: "https",
+				hostname: "pub-3776ca07607e43cd95caba4dbe54049a.r2.dev",
 			},
 		],
   },

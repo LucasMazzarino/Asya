@@ -104,6 +104,7 @@ export const OrderEmail = ({
               </Column>
               <Column style={informationTableColumn}>
                 <Text style={informationTableLabel}>
+                  esto es asya
                   Pago
                 </Text>
                 <Link

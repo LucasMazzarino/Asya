@@ -23,7 +23,7 @@ const Navbar = async () => {
               <MobileNav user={user}/>
               <div className="ml-4 flex lg:ml-0">
                 <Link href='/'>
-                  <Image src="/favicon.ico" alt="icon" width={70} height={70} priority/>
+                  <Image src="/favicon2.ico" alt="icon" width={70} height={70} priority/>
                 </Link>
               </div>
               <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-start lg:space-x-6 lg:ml-6">

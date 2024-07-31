@@ -54,7 +54,7 @@ const start = async () => {
     return
   }
 
-  const allowedOrigins = ['https://gemstonuruguay.com', 'https://www.gemstonuruguay.com'];
+  const allowedOrigins = ['http://localhost:3000', 'https://www.gemstonuruguay.com'];
   app.use(cors({
     origin: function (origin, callback) {
       if (!origin || allowedOrigins.includes(origin)) {

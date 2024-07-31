@@ -48,10 +48,8 @@ export default buildConfig({
   },
 
   editor: slateEditor({}),
-  db: postgresAdapter({
-    pool: {
-      connectionString: process.env.DATABASE_URL,
-    }
+  db: mongooseAdapter({
+    url: process.env.DATABASE_URL!,
   }),
   typescript: {
     outputFile: path.resolve(__dirname, "payload-type.ts"),

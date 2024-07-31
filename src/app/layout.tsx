@@ -7,17 +7,18 @@ import Providers from "@/components/Providers";
 import { Toaster } from "sonner";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import Contact from "@/components/Contact";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Gemstone Uruguay",
-  description: "Tienda de Joyas y Accesorios Online",
+  title: "Asya Uruguay",
+  description: "Importador Mayorista",
   openGraph: {
-    title: "Gemstone Uruguay",
-    description: "Tienda de Joyas y Accesorios Online",
+    title: "Asya Uruguay",
+    description: "Importador Mayorista",
     url: "https://gemstonuruguay.com",
-    siteName: "Gemstone Uruguay",
+    siteName: "Asya",
     images: [
       {
         url: "https://cdn.gemstonuruguay.com/favicon.ico",

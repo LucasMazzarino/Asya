@@ -13,6 +13,10 @@ const adminsAndUser: Access = ({ req: { user } }) => {
 
 export const Users: CollectionConfig = {
   slug: "users",
+  labels: {
+    singular: 'Usuario',
+    plural: 'Usuarios',
+  },
   auth: {
     verify: {
       generateEmailHTML: ({ token }) => {
