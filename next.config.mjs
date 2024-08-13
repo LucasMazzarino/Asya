@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+
   images: {
     remotePatterns: [
 			{
@@ -13,11 +14,7 @@ const nextConfig = {
 			},
 			{
 				protocol: "https",
-				hostname: "gemstonuruguay.com",
-			},
-			{
-				protocol: "https",
-				hostname: "cdn.gemstonuruguay.com",
+				hostname: "asya.uy",
 			},
 			{
 				protocol: "https",
@@ -29,7 +26,17 @@ const nextConfig = {
     fetches: {
       fullUrl: true,
     },
-  }
+  },
+
+  webpack(config) {
+    config.module.rules.push({
+      test: /\.svg$/,
+      use: [{ loader: "@svgr/webpack", options: { icon: true } }],
+    });
+
+    return config;
+  },
+
   
 };
 

@@ -38,47 +38,48 @@ const ProductListing = ({
   const validUrls = product.images
     .map(({ image }) => {
       const imageUrl = typeof image === 'string' ? image : image?.url
-      return imageUrl ? imageUrl.replace('http://localhost:3000/media/', 'https://pub-3776ca07607e43cd95caba4dbe54049a.r2.dev/') : ''
+      return imageUrl ? imageUrl.replace('http://localhost:3000/media/', 'https://asya.uy/') : ''
     })
     .filter(Boolean) as string[]
 
   if (isVisible && product) {
     return (
       <Link
-        className={cn(
-          'invisible h-full w-full cursor-pointer group/main',
-          {
-            'visible animate-in fade-in-5': isVisible,
-          }
-        )}
-        href={`/product/${product.id}`}>
-        <div className='flex flex-col w-full'>
-          <ImageSlider urls={validUrls} />
-          <h2 className='mt-4 font-medium text-sm text-gray-700'>
-            {product.name}
-          </h2>
-          <p className='mt-1 text-sm text-gray-600'>
-            {product.description}
-          </p>
-          <p className='mt-1 text-sm text-gray-500'>
-            {label}
-          </p>
+      className={cn(
+        'invisible h-full w-full cursor-pointer group/main',
+        {
+          'visible animate-in fade-in-5': isVisible,
+        }
+      )}
+      href={`/product/${product.id}`}>
+      <div className='flex flex-col h-full w-full border border-gray-500 rounded-lg shadow-md bg-gray-500'>
+        <ImageSlider urls={validUrls} />
+        <div className="flex flex-col justify-between flex-grow p-2">
+          <div className='flex flex-col justify-between flex-grow'>
+            <h2 className='font-medium text-sm text-white'>
+              {product.name}
+            </h2>
+            <p className='mt-1 text-sm text-slate-300'>
+              {label}
+            </p>
+          </div>
           {userType === 'Wholesale' ? (
-            <>
-            <p className='mt-1 font-medium text-sm text-gray-900 line-through'>
-            {formatPrice(product.price)}
-            </p>
-            <p className='mt-1 font-medium text-sm text-gray-900'>
-              {formatPrice(product.wholesalePrice)}
-            </p>
-            </>
-          ):(
-            <p className='mt-1 font-medium text-sm text-gray-900'>
-            {formatPrice(product.price)}
+            <div>
+              <p className='mt-1 font-medium text-sm text-white line-through'>
+                {formatPrice(product.price)}
+              </p>
+              <p className='mt-1 font-medium text-sm text-white'>
+                {formatPrice(product.wholesalePrice)}
+              </p>
+            </div>
+          ) : (
+            <p className='mt-1 font-medium text-white'>
+              {formatPrice(product.price)}
             </p>
           )}
         </div>
-      </Link>
+      </div>
+    </Link>
     )
   }
 }

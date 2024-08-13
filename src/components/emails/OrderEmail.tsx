@@ -58,10 +58,10 @@ export const OrderEmail = ({
           <Section>
             <Column>
               <Img
-                src='https://cdn.gemstonuruguay.com/thumnail.png'
+                src='https://asya.uy/favicon.ico'
                 width='100'
                 height='100'
-                alt='Gemstone'
+                alt='Asya'
               />
             </Column>
             <Column align='right' style={tableCell}>
@@ -104,7 +104,6 @@ export const OrderEmail = ({
               </Column>
               <Column style={informationTableColumn}>
                 <Text style={informationTableLabel}>
-                  esto es asya
                   Pago
                 </Text>
                 <Link
@@ -123,7 +122,7 @@ export const OrderEmail = ({
             const { image } = product.images[0]
             const imageUrl = typeof image === "string" 
             ? image 
-            : image.url?.replace('http://localhost:3000/media/', 'https://cdn.gemstonuruguay.com/');
+            : image.url?.replace('http://localhost:3000/media/', 'https://asya.uy/');
 
             return (
               <Section key={product.id}>
@@ -186,14 +185,11 @@ export const OrderEmail = ({
           <Hr style={productPriceLineBottom} />
           <Text style={footerCopyright}>
             ponte en contacto a nuestro <Link
-            href='https://api.whatsapp.com/send?phone=59892349023&text=Hola%2C%20realice%20un%20pedido%20en%20la%20web%20Gemstone.'>WhathsApp </Link>
+            href='https://api.whatsapp.com/send?phone=596703656&text=Hola%2C%20realice%20un%20pedido%20en%Asya.'>WhathsApp </Link>
              y envía el comprobante de la transferencia.
           </Text>
-          <Text style={footerLinksWrapper}>
-            <Link href={`${process.env.NEXT_PUBLIC_SERVER_URL}/Terminos-y-condiciones`}>Términos de uso y condiciones</Link> •{' '}
-          </Text>
           <Text style={footerCopyright}>
-            Copyright © 2024 Gemstone Inc. <br />{' '}
+            Copyright © 2024 Asya Inc. <br />{' '}
           </Text>
         </Container>
       </Body>

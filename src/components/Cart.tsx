@@ -49,13 +49,13 @@ const Cart = ({ user }: {user: User | null}) => {
       <SheetTrigger className="group -m-2 flex items-center p-2">
         <ShoppingCart
           arial-hidden="true"
-          className="h-6 w-6 flex-shrink-0 text-gray-400 group-hover:text-gray-500"
+          className="h-6 w-6 flex-shrink-0 text-white group-hover:text-gray-500"
         />
-        <span className="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">
+        <span className="ml-2 text-sm font-medium text-white group-hover:text-gray-800">
           {isMouted ? itemCount : 0}
         </span>
       </SheetTrigger>
-      <SheetContent className="flex w-full flex-col pr-0 sm:max-w-lg">
+      <SheetContent className="bg-white flex w-full flex-col pr-0 sm:max-w-lg">
         <SheetHeader className="space-y-2.5 pr-6">
           <SheetTitle>
             Carrito ({itemCount})
@@ -75,10 +75,10 @@ const Cart = ({ user }: {user: User | null}) => {
               <div className='space-y-1.5 text-sm'>
 
                 <div className='flex'>
-                  <span className='flex-1'>
+                  <span className='flex-1 font-semibold'>
                     Total
                   </span>
-                  <span>
+                  <span className='font-semibold'>
                     {formatPrice(cartTotal)}
                   </span>
                 </div>
@@ -100,7 +100,7 @@ const Cart = ({ user }: {user: User | null}) => {
               arial-hidden="True" 
               className='relative mb-5 h-52 w-60 text-muted-foreground'>
               <Image 
-                src="https://cdn.gemstonuruguay.com/empty-cart.png" 
+                src="https://asya.uy/empty-cart.webp" 
                 fill 
                 sizes="100vw"
                 alt="empty shopping" 

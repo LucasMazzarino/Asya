@@ -21,21 +21,23 @@ import * as React from 'react'
 
 import { format } from 'date-fns'
 
-interface ReceiptEmailProps {
+interface MeEmailProps {
   email: string
   date: Date
+  phone: string
   userType: string
   orderId: string
   products: Product[]
 }
 
-export const ReceiptEmail = ({
+export const MeEmail = ({
   email,
   date,
   userType,
   orderId,
+  phone,
   products,
-}: ReceiptEmailProps) => {
+}: MeEmailProps) => {
   const total = userType === 'Wholesale' 
     ? products.reduce((acc, curr) => acc + curr.wholesalePrice * curr.quantity!, 0)
     : products.reduce((acc, curr) => acc + curr.price * curr.quantity!, 0)
@@ -51,7 +53,7 @@ export const ReceiptEmail = ({
   return (
     <Html>
       <Head />
-      <Preview>Tu Factura de Asya</Preview>
+      <Preview>Esto es lo que ordenaron</Preview>
 
       <Body style={main}>
         <Container style={container}>
@@ -64,9 +66,8 @@ export const ReceiptEmail = ({
                 alt='Asya'
               />
             </Column>
-
             <Column align='right' style={tableCell}>
-              <Text style={heading}>Factura</Text>
+              <Text style={heading}>Pedido</Text>
             </Column>
           </Section>
           <Section style={informationTable}>
@@ -111,13 +112,24 @@ export const ReceiptEmail = ({
                   style={{
                     ...informationTableValue,
                   }}>
-                  aprobado
+                  pendiente
+                </Link>
+              </Column>
+              <Column style={informationTableColumn}>
+                <Text style={informationTableLabel}>
+                  celular
+                </Text>
+                <Link
+                  style={{
+                    ...informationTableValue,
+                  }}>
+                  {phone}
                 </Link>
               </Column>
             </Row>
           </Section>
           <Section style={productTitleTable}>
-            <Text style={productsTitle}>Suma de la orden</Text>
+            <Text style={productsTitle}>Suma del pedido</Text>
           </Section>
           {products.map((product) => {
             const { image } = product.images[0]
@@ -125,19 +137,20 @@ export const ReceiptEmail = ({
             ? image 
             : image.url?.replace('http://localhost:3000/media/', 'https://asya.uy/');
 
-          return (
-            <Section key={product.id}>
-              <Column style={{ width: '64px' }}>
-                {imageUrl ? (
-                  <Img
-                    src={imageUrl}
-                    width='64'
-                    height='64'
-                    alt='Product Image'
-                    style={productIcon}
-                  />
-                ) : null}
-                </Column> 
+            return (
+              <Section key={product.id}>
+                <Column style={{ width: '64px' }}>
+                  {typeof image !== 'string' &&
+                  image.url ? (
+                    <Img
+                      src={imageUrl}
+                      width='64'
+                      height='64'
+                      alt='Product Image'
+                      style={productIcon}
+                    />
+                  ) : null}
+                </Column>
                 <Column style={{ paddingLeft: '22px' }}>
                   <Text style={productTitle}>
                     {product.name}
@@ -183,25 +196,16 @@ export const ReceiptEmail = ({
             </Column>
           </Section>
           <Hr style={productPriceLineBottom} />
-
-          <Text style={footerLinksWrapper}>
-            <Link href='#'>Términos de uso</Link> •{' '}
-            <Link href='#'>Política de privacidad</Link>
-          </Text>
-          <Text style={footerCopyright}>
-            Copyright © 2024 Asya Inc. <br />{' '}
-            <Link href='#'>Todos los derechos reservados</Link>
-          </Text>
         </Container>
       </Body>
     </Html>
   )
 }
 
-export const ReceiptEmailHtml = (
-  props: ReceiptEmailProps
+export const MeEmailHtml = (
+  props: MeEmailProps
 ) =>
-  render(<ReceiptEmail {...props} />, {
+  render(<MeEmail {...props} />, {
     pretty: true,
   })
 
@@ -346,7 +350,7 @@ const productPriceLargeWrapper = {
   width: '90px',
 }
 
-const productPriceLineBottom = { margin: '0 0 75px 0' }
+const productPriceLineBottom = { margin: '0 0 20px 0' }
 
 const footerLinksWrapper = {
   margin: '8px 0 0 0',

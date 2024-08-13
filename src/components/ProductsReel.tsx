@@ -69,12 +69,12 @@ const ProductReel = (props: ProductReelProps) => {
       <div className='md:flex md:items-center md:justify-between mb-4'>
         <div className='max-w-2xl lg:max-w-4xl lg:px-0'>
           {title ? (
-            <h2 className='text-2xl font-extrabold text-gray-900 sm:text-3xl'>
+            <h2 className='text-2xl font-extrabold text-white sm:text-3xl'>
               {title} 
             </h2>
           ) : null}
           {subtitle ? (
-            <p className='mt-2 text-sm text-muted-foreground'>
+            <p className='mt-2 text-sm text-white'>
               {subtitle}
             </p>
           ) : null}
@@ -83,7 +83,7 @@ const ProductReel = (props: ProductReelProps) => {
         {href ? (
           <Link
             href={href}
-            className='hidden text-sm font-medium text-blue-600 hover:text-blue-500 md:block'>
+            className='hidden text-sm font-medium text-orange-500 hover:text-orange-600 md:block'>
             Ver la Colección{' '}
             <span aria-hidden='true'>&rarr;</span>
           </Link>

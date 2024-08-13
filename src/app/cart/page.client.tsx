@@ -37,9 +37,9 @@ const CartPage = ({ user }: { user: User | null }) => {
 
   return (
     <MaxWidthWrapper >
-    <div className="bg-white">
-      <div className="mx.auto max-w-2xl px-4 pb-24 pt-16 sm:px-2 lg:max-w-7xl lg:px-8">
-        <h3 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+    <div className="bg-background mt-10">
+      <div className="max-w-2xl px-4 pb-24 pt-16 sm:px-2 lg:max-w-7xl lg:px-8">
+        <h3 className="text-whitetext-3xl font-bold tracking-tight text-orange-500 sm:text-4xl">
           Carrito de Compras
         </h3>
         <div className="mt-12 lg-grid lg:col-12 lg:items-star lg:gap-x-12 xl:gap-x-16">
@@ -54,17 +54,17 @@ const CartPage = ({ user }: { user: User | null }) => {
               <div className="flex h-full flex-col items-center justify-center space-y-1">
                 <div
                   aria-hidden
-                  className="relative mb-4 h-40 w-40 text-muted-foreground">
-                  <Image src='https://cdn.gemstonuruguay.com/empty-cart.png'
+                  className="relative mb-4 h-40 w-40 text-white">
+                  <Image src='https://asya.uy/empty-cart-nobg.webp'
                     fill
                     sizes='100vw'
                     loading="eager"
                     alt="Carrito vació" />
                 </div>
-                <h3 className="font-semibold text-2xl">
+                <h3 className="text-white font-semibold text-2xl">
                   Tu carrito esta vació
                 </h3>
-                <p className="text-muted-foreground text-center">
+                <p className="text-white text-center">
                   Nada que mostrar todavía
                 </p>
               </div>
@@ -103,40 +103,40 @@ const CartPage = ({ user }: { user: User | null }) => {
                             <h3 className='text-sm'>
                               <Link
                                 href={`/product/${product.id}`}
-                                className='font-medium text-gray-700 hover:text-gray-800'>
+                                className='font-medium text-white hover:text-gray-800'>
                                 {product.name}
                               </Link>
                             </h3>
                           </div>
 
                           <div className='mt-1 flex text-sm'>
-                            <p className='text-muted-foreground'>
+                            <p className='text-white'>
                               Categoría: {label}
                             </p>
                           </div>
                           {
                             user?.customerType === 'Wholesale' ? (
-                              <p className='mt-1 text-sm font-medium text-gray-900'>
+                              <p className='mt-1 text-sm font-medium text-white'>
                                 {formatPrice(product.wholesalePrice)}
                               </p>
                               )
                               :
                               (
-                                <p className='mt-1 text-sm font-medium text-gray-900'>
+                                <p className='mt-1 text-sm font-medium text-white'>
                                   {formatPrice(product.price)}
                                 </p>
                               )
                           }
-                          <p className='mt-1 text-sm font-medium text-muted-foreground'>
+                          <p className='mt-1 text-sm font-medium text-white'>
                             Cantidad: {count}
                           </p>
                           {
                             user?.customerType === 'Wholesale' ?
-                            <p className='mt-6 w-24 text-lg font-medium text-gray-900'>
+                            <p className='mt-6 w-24 text-lg font-medium text-white'>
                             Total : {product.wholesalePrice * count}
                             </p>
                             :
-                            <p className='mt-3 w-24 text-lg font-medium text-gray-900'>
+                            <p className='mt-3 w-24 text-lg font-medium text-white'>
                             Total : {product.price * count}
                           </p>                            
                           }
@@ -149,9 +149,10 @@ const CartPage = ({ user }: { user: User | null }) => {
                               onClick={() =>
                                 removeItem(product.id)
                               }
-                              variant='ghost'>
+                              variant='ghost'
+                              >
                               <X
-                                className='h-5 w-5'
+                                className='h-5 w-5 text-red-600'
                                 aria-hidden='true'
                               />
                             </Button>
@@ -162,18 +163,18 @@ const CartPage = ({ user }: { user: User | null }) => {
                       <div className='mt-3 flex items-center'>
                         <Truck
                           aria-hidden='true'
-                          className='h-5 w-5 flex-shrink-0 text-green-700'
+                          className='h-5 w-5 flex-shrink-0 text-orange-500'
                         />
-                        <p className='ml-2 text-sm font-semibold text-green-700'>
+                        <p className='ml-2 text-sm font-semibold text-orange-500'>
                           Delivery a todo el Uruguay
                         </p>
                       </div>
                       <div className='mt-6 flex items-center'>
                         <ShieldCheck
                           aria-hidden='true'
-                          className='h-5 w-5 flex-shrink-0 text-green-700'
+                          className='h-5 w-5 flex-shrink-0 text-orange-500'
                         />
-                        <p className='ml-2 text-sm font-semibold text-green-700'>
+                        <p className='ml-2 text-sm font-semibold text-orange-500'>
                           Pago seguro con Mercado Pago
                         </p>
                       </div>
@@ -183,17 +184,17 @@ const CartPage = ({ user }: { user: User | null }) => {
               })}
             </ul>
           </div>
-          <section className='mt-16 rounded-lg bg-gray-50 px-4 py-6 sm:p-6 lg:col-span-5 lg:mt-0 lg:p-8'>
-            <h2 className='text-lg font-medium text-gray-900'>
+          <section className='mt-16 rounded-lg bg-background px-4 py-6 sm:p-6 lg:col-span-5 lg:mt-0 lg:p-8'>
+            <h2 className='text-lg font-medium text-white'>
               Detalles del pedido
             </h2>
 
             <div className='mt-6 space-y-4'>
               <div className='flex items-center justify-between'>
-                <p className='text-sm text-gray-600'>
+                <p className='text-sm text-white'>
                   Subtotal
                 </p>
-                <p className='text-sm font-medium text-gray-900'>
+                <p className='text-sm font-medium text-white'>
                   {isMounted ? (
                     formatPrice(cartTotal)
                   ) : (
@@ -203,10 +204,10 @@ const CartPage = ({ user }: { user: User | null }) => {
               </div>
 
               <div className="flex items-center justify-between border-t border-gray-200 pt-4">
-                <div className="flex items-center text-sm text-muted-foreground">
+                <div className="flex items-center text-sm text-white">
                   <span>Envío</span>
                 </div>
-                <div className="text-sm font-medium text-gray-900 flex flex-col items-end">
+                <div className="text-sm font-medium text-white flex flex-col items-end">
                   {isMounted ? (
                     <div className="flex items-center">
                       <Tooltip.Provider>
@@ -235,14 +236,14 @@ const CartPage = ({ user }: { user: User | null }) => {
               </div>
 
               <div className='flex items-center justify-between border-t border-gray-200 pt-4'>
-                <div className='text-base font-medium text-gray-900'>
+                <div className='text-base font-medium text-white'>
                   Total de la orden
                 </div>
-                <div className='text-base font-medium text-gray-900'>
+                <div className='text-base font-medium text-white'>
                   {isMounted ? (
                     formatPrice(cartTotal)
                   ) : (
-                    <Loader2 className='h-4 w-4 animate-spin text-muted-foreground' />
+                    <Loader2 className='h-4 w-4 animate-spin text-white' />
                   )}
                 </div>
               </div>

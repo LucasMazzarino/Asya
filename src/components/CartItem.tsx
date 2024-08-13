@@ -18,7 +18,7 @@ const CartItem = ({ product, count, userType}: CartItemProps) => {
 
   const imageUrl = typeof image === "string" 
   ? image 
-  : image.url?.replace('http://localhost:3000/media/', 'https://pub-3776ca07607e43cd95caba4dbe54049a.r2.dev/');
+  : image.url?.replace('http://localhost:3000/media/', 'https://asya.uy/');
 
 
   const subtotal = userType === 'Wholesale' ?
@@ -60,10 +60,10 @@ const CartItem = ({ product, count, userType}: CartItemProps) => {
           </div>
 
           <div className="flex flex-col self-start">
-              <span className="line-clamp-1 text-sm font-medium mb-1">
+              <span className="sline-clamp-1 text-sm font-medium mb-1">
                 {product.name}
               </span>
-              <span className="line-clamp-1 text-xs capitalize text-muted-foreground">
+              <span className="whitespace-normal text-xs capitalize text-muted-foreground">
                 {label}
               </span>
               <div className="mt-3 text-xs px-2 py-2 rounded-lg max-w-16 text-black bg-red-500  hover:bg-red-400">
@@ -100,7 +100,7 @@ const CartItem = ({ product, count, userType}: CartItemProps) => {
           {/* Cantidad: {count !== undefined ? count.toString() : 'No disponible'} */}
           </span>
           <span className="ml-auto line-clamp-1 text-sm">
-          Subtotal : {formatPrice(subtotal)}
+          Subtotal:{formatPrice(subtotal)}
           </span>
         </div>
       </div>

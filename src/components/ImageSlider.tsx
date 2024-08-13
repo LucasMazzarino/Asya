@@ -41,7 +41,7 @@ const ImageSlider = ({ urls }: ImageSliderProps) => {
   const inactiveStyles = 'hidden text-gray-400'
 
   return (
-    <div className='group relative bg-zinc-100 aspect-square overflow-hidden rounded-xl'>
+    <div className='group relative bg-zinc-100 aspect-square overflow-hidden rounded-lg'>
       <div className='absolute z-10 inset-0 opacity-0 group-hover:opacity-100 transition'>
         <button
           onClick={(e) => {
@@ -89,16 +89,17 @@ const ImageSlider = ({ urls }: ImageSliderProps) => {
         {urls.map((url, i) => (
           <SwiperSlide
             key={i}
-            className='-z-10 relative h-full w-full'>
-            <Image
-              fill
-              priority
-              loading='eager'
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              className='-z-10 h-full w-full object-cover object-center'
-              src={url}
-              alt='Product image'
-            />
+            className='-z-10 relative h-full w-full'>           
+              <Image
+                src={url}
+                alt='Product image'
+                fill
+                priority={false}
+                loading='lazy'
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                className='object-cover object-center'
+                quality={85}
+              />
           </SwiperSlide>
         ))}
       </Swiper>

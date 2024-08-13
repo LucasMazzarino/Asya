@@ -31,19 +31,19 @@ const PaymentStatus = ({
   }, [data?.isPaid, router])
 
   return (
-    <div className='mt-16 grid grid-cols-2 gap-x-4 text-sm text-gray-600'>
+    <div className='mt-16 grid grid-cols-2 gap-x-4 text-sm'>
       <div>
-        <p className='font-medium text-gray-900'>
+        <p className='font-medium text-primary'>
           Envío a
         </p>
-        <p>{orderEmail}</p>
+        <p className='text-white'>{orderEmail}</p>
       </div>
 
       <div>
-        <p className='font-medium text-gray-900'>
+        <p className='font-medium text-primary'>
           Estado de la orden
         </p>
-        <p>
+        <p className='text-white'>
           {isPaid
             ? 'Pago exitoso'
             : 'Pago pendiente'}

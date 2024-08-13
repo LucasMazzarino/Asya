@@ -29,22 +29,23 @@ export const EmailTemplate = ({
     <Html>
       <Head />
       <Preview>
-        Tienda online de Joyas
+        Asya  e-commerce
       </Preview>
       <Body style={main}>
         <Container style={container}>
         <Section style={logoContainer}>
             <Img
-              src='https://cdn.gemstonuruguay.com/thumnail.png'
+              src='https://asya.uy/favicon.ico'
               width='300'
               height='300'
-              alt='Gem'
+              alt='Asya'
               style={logo}
             />
           </Section>
           <Text style={paragraph}>Hola!</Text>
           <Text style={paragraph}>
-           Bienvenidos a Asya, tienda online de joyas en Uruguay
+           Bienvenidos a Asya, gracias por registrate en nuestra plataforma.
+           Verifica tu cuenta para comenzar comenzar a comprar!
            <br />
             {actionLabel}.
           </Text>
@@ -56,7 +57,7 @@ export const EmailTemplate = ({
           <Text style={paragraph}>
             Te deseamos lo mejor.
             <br />
-            El Equipo de Gemstone
+            El Equipo de Asya
           </Text>
           <Hr style={hr} />
           <Text style={footer}>

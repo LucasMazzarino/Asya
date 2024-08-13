@@ -12,28 +12,26 @@ const FilterProducts: React.FC<FilterProductsProps> = ({ onFilterSelect }) => {
   const [activeFilter, setActiveFilter] = useState<string | null>(null)
 
 
-  const handleFilterClick = (filter: string | null) => {
-    const newFilter = activeFilter === filter ? null : filter; 
-    setActiveFilter(newFilter);
-    onFilterSelect(newFilter); 
+  const handleFilterChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    const selectedFilter = event.target.value === '' ? null : event.target.value
+    setActiveFilter(selectedFilter)
+    onFilterSelect(selectedFilter)
   }
 
   return (
-    <div className='flex flex-row text-muted-foreground text-center rounded-full bg-slate-50 justify-between space-x-4 mt-4 mb-5 p-4 overflow-x-auto'>
+    <select
+      value={activeFilter || ''}
+      onChange={handleFilterChange}
+      className='text-black bg-white border border-black rounded-2xl p-2 w-40 md:w-60'
+    >
+      <option value=''>Todas las categorías</option>
       {PRODUCT_CATEGORIES.map((category, index) => (
-        <p
-          key={index}
-          className={`cursor-pointer ${
-            activeFilter === category.value ? 'font-bold' : ''
-          }`}
-          onClick={() => handleFilterClick(category.value)}
-        >
+        <option key={index} value={category.value}>
           {category.label}
-        </p>
+        </option>
       ))}
-    </div>
-  );
-};
-
+    </select>
+  )
+}
 
 export default FilterProducts

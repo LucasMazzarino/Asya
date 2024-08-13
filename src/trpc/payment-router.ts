@@ -8,6 +8,7 @@ import { getPayloadClient } from '../get-payload'
 import { MercadoPagoConfig, Preference } from 'mercadopago';
 import { Resend } from 'resend';
 import { OrderEmailHtml } from '../components/emails/OrderEmail';
+import { MeEmailHtml } from '../components/emails/MeEmail';
 import { Product } from '@/payload-type';
 
 
@@ -97,7 +98,7 @@ export const paymentRouter = router({
         .create({
           body:{
             items: lineItems,
-            notification_url:`${process.env.NEXT_PUBLIC_SERVER_URL}/payment`,
+            notification_url:`https://886a-2800-a4-1b35-9700-301b-3185-37-238d.ngrok-free.app/payment`,
             back_urls: {
               success:`${process.env.NEXT_PUBLIC_SERVER_URL}/thank-you?orderId=${order.id}`,
               failure:`${process.env.NEXT_PUBLIC_SERVER_URL}/cart`,
@@ -215,13 +216,31 @@ export const paymentRouter = router({
     
 
     const data = await resend.emails.send({
-      from: 'GemstoneUruguay <servicio@gemstonuruguay.com>',
+      from: 'AsyaUruguay <servicio@asya.uy>',
       to: [user.email],
       subject:
         'Muchas gracias por tu pedido! esto es lo que ordenaste',
       html: OrderEmailHtml({
         date: new Date(),
         email: user.email,
+        userType: user.customerType!,
+        orderId: order.id,
+        products: items.map(item => ({
+          ...item.product,
+          quantity: item.quantity,
+        })),
+      }),
+    });
+
+    const dataMe = await resend.emails.send({
+      from: 'AsyaUruguay <servicio@asya.uy>',
+      to: ['luc.mazzarino@gmail.com'],
+      subject:
+        'Un cliente realizo un nuevo pedido en Asya',
+      html: MeEmailHtml({
+        date: new Date(),
+        email: user.email,
+        phone: user.phoneNumber,
         userType: user.customerType!,
         orderId: order.id,
         products: items.map(item => ({

@@ -74,8 +74,13 @@ const Page = () => {
       <div className='container relative flex pt-20 flex-col items-center justify-center lg:px-0'>
         <div className='mx-auto flex w-full flex-col justify-center space-y-6 sm:w-[350px]'>
           <div className='flex flex-col items-center space-y-2 text-center'>
-            <Image src="/favicon2.ico" alt="logo" width={140} height={140} priority/>
-            <h3 className='text-2xl font-bold tracking-tight'>
+            <Image 
+                src="https://asya.uy/favicon3.ico"
+                alt="Favicon"
+                width={140}
+                height={140}
+                priority/>
+            <h3 className='text-2xl text-white font-bold tracking-tight'>
               Inicia sesión en tu {' '}
               cuenta
             </h3>
@@ -95,10 +100,14 @@ const Page = () => {
             <form onSubmit={handleSubmit(onSubmit)}>
               <div className='grid gap-2'>
                 <div className='grid gap-1 py-2'>
-                  <Label htmlFor='email'>Correo</Label>
+                  <Label 
+                    htmlFor='email' 
+                    className='text-white'>Correo</Label>
                   <Input
                     {...register('email')}
-                    className={cn({
+                    className={cn(
+                      "bg-white border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500",
+                      {
                       'focus-visible:ring-red-500':
                         errors.email,
                     })}
@@ -112,11 +121,15 @@ const Page = () => {
                 </div>
 
                 <div className='grid gap-1 py-2'>
-                  <Label htmlFor='password'>Contraseña</Label>
+                  <Label 
+                    htmlFor='password'
+                    className='text-white'>Contraseña</Label>
                   <Input
                     {...register('password')}
                     type='password'
-                    className={cn({
+                    className={cn(
+                      "bg-white border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500",
+                      {
                       'focus-visible:ring-red-500':
                         errors.password,
                     })}

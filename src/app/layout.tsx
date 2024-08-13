@@ -7,7 +7,7 @@ import Providers from "@/components/Providers";
 import { Toaster } from "sonner";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
-import Contact from "@/components/Contact";
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,14 +17,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Asya Uruguay",
     description: "Importador Mayorista",
-    url: "https://gemstonuruguay.com",
+    url: "https://asya.uy",
     siteName: "Asya",
     images: [
       {
-        url: "https://cdn.gemstonuruguay.com/favicon.ico",
+        url: "https://asya.uy/favicon.ico",
         width: 800,
         height: 600,
-        alt: "Gemstone Uruguay",
+        alt: "Asya",
       },
     ],
     locale: "es_ES",
@@ -37,11 +37,13 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+  
   return (
     <html lang="es" className=" h-full">
       <head>
         <link rel="icon" href="/favicon.ico" />
-        <link rel="canonical" href="https://gemstonuruguay.com" />
+        <link rel="canonical" href="https://asya.uy" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
@@ -52,9 +54,9 @@ export default function RootLayout({
         "relative h-full font-sans antialiased",
         inter.className
         )}>
-        <main className="relative flex flex-col min-h-screen">
+        <main className="relative flex flex-col min-h-screen bg-background">
           <Providers>
-          <Navbar />
+          <Navbar  />
             <div className="flex-grow flex-1">{children}</div>
             <Footer />
             <WhatsAppButton />

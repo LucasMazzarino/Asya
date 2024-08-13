@@ -6,6 +6,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { buttonVariants } from './ui/button'
 
+
 interface VerifyEmailProps {
   token: string
 }
@@ -20,7 +21,7 @@ const VerifyEmail = ({ token }: VerifyEmailProps) => {
     return (
       <div className='flex flex-col items-center gap-2'>
         <XCircle className='h-8 w-8 text-red-600' />
-        <h3 className='font-semibold text-xl'>
+        <h3 className='font-semibold text-white text-xl'>
           Hubo un problema
         </h3>
         <p className='text-muted-foreground text-sm'>
@@ -34,15 +35,15 @@ const VerifyEmail = ({ token }: VerifyEmailProps) => {
   if (data?.success) {
     return (
       <div className='flex h-full flex-col items-center justify-center mb-10'>
-        <div className='relative mb-4 h-60 w-60 text-muted-foreground'>
+        <div className='relative mb-4 h-90 w-90 text-muted-foreground'>
           <Image
-            src='https://cdn.gemstonuruguay.com/verify-completed.png'
+            src='https://asya.uy/verify-complete.webp'
             width='1400'
             height='1400'
             alt='email enviado'
           />
         </div>
-        <h3 className='font-semibold text-2xl mt-4'>
+        <h3 className='font-semibold text-white text-2xl mt-4'>
           Todo Listo!
         </h3>
         <p className='text-muted-foreground text-center mt-1'>

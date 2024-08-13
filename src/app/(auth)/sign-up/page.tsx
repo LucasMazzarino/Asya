@@ -87,11 +87,16 @@ const Page = () => {
 
   return (
     <>
-      <div className='container relative flex pt-20 flex-col items-center justify-center lg:px-0'>
+      <div className='container relative flex pt-20 pb-10 flex-col items-center justify-center lg:px-0'>
         <div className='mx-auto flex w-full flex-col justify-center space-y-6 sm:w-[350px]'>
           <div className='flex flex-col items-center space-y-2 text-center'>
-            <Image src="/favicon2.ico" alt="logo" width={140} height={140} priority/>
-            <h2 className="text-2xl font-bold">
+            <Image 
+                src="https://asya.uy/favicon3.ico"
+                alt="Favicon"
+                width={140}
+                height={140}
+                priority/>
+            <h2 className="text-2xl text-white font-bold">
               Crear mi Cuenta
             </h2>
             <Link className={buttonVariants({
@@ -107,12 +112,17 @@ const Page = () => {
             <form onSubmit={handleSubmit(onSubmit)}>
               <div className="grid gap-2 pb-5">
                 <div className="grid gap-1 py-2">
-                  <Label htmlFor='email'>Correo</Label>
+                  <Label 
+                    htmlFor='email'
+                    className="text-white">Correo</Label>
                   <Input 
                     {...register("email")}
-                    className={cn({
-                      "focus-visible:ring-red-500": errors.email,
-                    })}
+                    className={cn(
+                      "bg-white border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500",
+                      {
+                        "focus-visible:ring-red-500 border-red-500": errors.email,
+                      }
+                    )}
                       placeholder="Tucorreo@ejemplo.com"
                     />
                     {errors?.email && (
@@ -120,10 +130,14 @@ const Page = () => {
                     )}
                   </div>
                   <div className="grid gap-1 py-2">
-                  <Label htmlFor='name'>Nombre</Label>
+                  <Label 
+                    htmlFor='name'
+                    className="text-white">Nombre</Label>
                   <Input
                     {...register("firstName")}
-                    className={cn({
+                    className={cn(
+                      "bg-white border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500",
+                      {
                       "focus-visible:ring-red-500": errors.firstName,
                     })}
                       placeholder="Juan"
@@ -133,10 +147,14 @@ const Page = () => {
                     )}
                 </div>               
                 <div className="grid gap-1 py-2">
-                  <Label htmlFor='name'>Apellido</Label>
+                  <Label 
+                    htmlFor='name'
+                    className="text-white">Apellido</Label>
                   <Input
                     {...register("lastName")}
-                    className={cn({
+                    className={cn(
+                      "bg-white border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500",
+                      {
                       "focus-visible:ring-red-500": errors.lastName,
                     })}
                       placeholder="Rodriguez"
@@ -146,12 +164,16 @@ const Page = () => {
                     )}
                 </div>               
                 <div className="grid gap-1 py-2">
-                  <Label htmlFor='phoneNumber'>Celular</Label>
+                  <Label 
+                    htmlFor='phoneNumber'
+                    className="text-white">Celular</Label>
                   <Input
                     {...register("phoneNumber", {
                       required: "El número de teléfono es requerido",
                     })}
-                    className={cn({
+                    className={cn(
+                      "bg-white border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500",
+                      {
                       "focus-visible:ring-red-500": errors.phoneNumber,
                     })}
                       placeholder="123456789"
@@ -161,7 +183,9 @@ const Page = () => {
                     )}
                 </div>               
                 <div className="grid gap-1 py-2">
-                  <Label htmlFor='department'>Departamento</Label>
+                  <Label 
+                    htmlFor='department'
+                    className="text-white">Departamento</Label>
                     <select
                       {...register("department")}
                       className="block w-full py-2 pl-3 pr-10 border border-gray-200 rounded-md focus:outline-none sm:text-sm"
@@ -177,10 +201,14 @@ const Page = () => {
                   )}
                 </div>
                 <div className="grid gap-1 py-2">
-                  <Label htmlFor='address'>Dirección</Label>
+                  <Label 
+                    htmlFor='address'
+                    className="text-white">Dirección</Label>
                   <Input
                     {...register("address")}
-                    className={cn({
+                    className={cn(
+                      "bg-white border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500",
+                      {
                       "focus-visible:ring-red-500": errors.address,
                     })}
                       placeholder="Tu dirección aquí"
@@ -190,11 +218,15 @@ const Page = () => {
                     )}
                 </div>
                 <div className="grid gap-1 py-2">
-                  <Label htmlFor='password'>Contraseña</Label>
+                  <Label 
+                    htmlFor='password'
+                    className="text-white">Contraseña</Label>
                   <Input
                     {...register("password")}
                     type="password"
-                    className={cn({
+                    className={cn(
+                      "bg-white border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500",
+                      {
                       "focus-visible:ring-red-500": errors.password,
                     })}
                       placeholder="Contraseña"

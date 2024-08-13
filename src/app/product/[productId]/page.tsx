@@ -11,6 +11,7 @@ import { notFound } from 'next/navigation'
 import { getServerSideUser } from '@/lib/payload-utils'
 import { cookies } from 'next/headers'
 import { User } from '@/payload-type'
+import { Product } from '@/payload-type'
 
 
 
@@ -20,6 +21,7 @@ interface PageProps {
     user?: User | null
   }
 }
+
 
 const LINKS = [
   { id: 1, name: 'Inicio', href: '/' },
@@ -34,7 +36,7 @@ const Page = async ({ params }: PageProps) => {
 
   const payload = await getPayloadClient()
 
-  const { docs: products } = await payload.find({
+  const { docs: products } = await payload.find<Product>({
     collection: 'products',
     limit: 1,
     where: {
@@ -47,7 +49,7 @@ const Page = async ({ params }: PageProps) => {
     },
   })
 
-  const [product] = products
+  const [product] = products as Product[]
 
   if (!product) return notFound()
 
@@ -58,14 +60,14 @@ const Page = async ({ params }: PageProps) => {
   const validUrls = product.images
     .map(({ image }) => {
       const imageUrl = typeof image === 'string' ? image : image?.url
-      return imageUrl ? imageUrl.replace('http://localhost:3000/media/', 'https://pub-3776ca07607e43cd95caba4dbe54049a.r2.dev/') : ''
+      return imageUrl ? imageUrl.replace('http://localhost:3000/media/', 'https://asya.uy/') : ''
     })
     .filter(Boolean) as string[]
   
 
   return (
-    <MaxWidthWrapper className='bg-white'>
-      <div className='bg-white'>
+    <MaxWidthWrapper>
+      <div className='bg-background'>
         <div className='mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:grid lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8'>
           {/* Product Details */}
           <div className='lg:max-w-lg lg:self-end'>
@@ -75,7 +77,7 @@ const Page = async ({ params }: PageProps) => {
                   <div className='flex items-center text-sm'>
                     <Link
                       href={breadcrumb.href}
-                      className='font-medium text-sm text-muted-foreground hover:text-gray-900'>
+                      className='font-medium text-sm text-primary hover:text-gray-900'>
                       {breadcrumb.name}
                     </Link>
                     {i !== LINKS.length - 1 ? (
@@ -93,7 +95,7 @@ const Page = async ({ params }: PageProps) => {
             </ol>
 
             <div className='mt-4 flex items-center'>
-              <h2 className='text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl'>
+              <h2 className='text-3xl font-bold tracking-tight text-white sm:text-4xl'>
                 {product.name}
               </h2>
             </div>
@@ -101,25 +103,25 @@ const Page = async ({ params }: PageProps) => {
               <div className='flex items-center'>
                 {user?.customerType === 'Wholesale' ? (
                   <div className="flex flex-col">
-                  <p className='font-medium text-gray-900 line-through'>
+                  <p className='text-xl text-white line-through'>
                     {formatPrice(product.price)}
                   </p>
-                  <p className='font-medium text-gray-900'>
+                  <p className='text-xl text-white'>
                     {formatPrice(product.wholesalePrice)}
                   </p>
                 </div>
                 ): (
-                  <p className='font-medium text-gray-900'>
+                  <p className='text-xl text-white'>
                   {formatPrice(product.price)}
                 </p>
                 )}
-                <div className='ml-4 border-l text-muted-foreground border-gray-300 pl-4'>
+                <div className='text-lg ml-4 border-l text-white border-gray-300 pl-4'>
                   {label}
                 </div>
               </div>
 
               <div className='mt-4 space-y-6'>
-                <p className='text-base text-muted-foreground'>
+                <p className='text-lg text-white'>
                   {product.description}
                 </p>
               </div>
@@ -129,7 +131,7 @@ const Page = async ({ params }: PageProps) => {
                   aria-hidden='true'
                   className='h-5 w-5 flex-shrink-0 text-green-700'
                 />
-                <p className='ml-2 text-sm font-semibold text-green-700'>
+                <p className='ml-2 text-md font-semibold text-green-700'>
                   Delivery a todo el Uruguay
                 </p>
               </div>
@@ -138,7 +140,7 @@ const Page = async ({ params }: PageProps) => {
                   aria-hidden='true'
                   className='h-5 w-5 flex-shrink-0 text-green-700'
                 />
-                <p className='ml-2 text-sm font-semibold text-green-700'>
+                <p className='ml-2 text-md font-semibold text-green-700'>
                   Pago seguro con Mercado Pago
                 </p>
               </div>

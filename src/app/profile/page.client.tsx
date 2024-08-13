@@ -110,7 +110,7 @@ const ProfilePage = ({ user }: { user: User | null }) => {
                   defaultValue={user.firstName}
                   {...register("firstName")}
                   disabled={!isEditing}
-                  className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm sm:text-sm"
+                  className="block bg-white w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm sm:text-sm"
                 />
                 {errors?.firstName && (
                   <p className="text-sm text-red-500">{errors.firstName.message}</p>
@@ -126,7 +126,7 @@ const ProfilePage = ({ user }: { user: User | null }) => {
                   defaultValue={user.lastName}
                   {...register("lastName")}
                   disabled={!isEditing}
-                  className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm sm:text-sm"
+                  className="block bg-white w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm sm:text-sm"
                 />
                  {errors?.lastName && (
                     <p className="text-sm text-red-500">{errors.lastName.message}</p>
@@ -143,7 +143,7 @@ const ProfilePage = ({ user }: { user: User | null }) => {
                 defaultValue={user.phoneNumber}
                 {...register("phoneNumber")}
                 disabled={!isEditing}
-                className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm sm:text-sm"
+                className="block bg-white w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm sm:text-sm"
               />
               {errors?.phoneNumber && (
                 <p className="text-sm text-red-500">{errors.phoneNumber.message}</p>

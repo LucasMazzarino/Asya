@@ -96,7 +96,7 @@ export async function POST(request: NextRequest) {
 
       try {
         const data = await resend.emails.send({
-          from: 'GemstoneUruguay <servicio@gemstonuruguay.com>',
+          from: 'AsyaUruguay <servicio@asya.uy>',
           to: [user.email],
           subject:
             'Muchas gracias por tu orden! aquí esta tu recibo',

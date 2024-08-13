@@ -26,7 +26,7 @@ const UserAccountNav = ({ user }: { user: User }) => {
         asChild
         className='overflow-visible'>
         <Button
-          variant='ghost'
+          variant='secondary'
           size='sm'
           className='relative'>
           Mi cuenta
