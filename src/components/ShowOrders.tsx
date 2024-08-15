@@ -4,9 +4,10 @@ import Image from 'next/image'
 
 interface props {
   orders: Order[]
+  user: User
 }
 
-const ShowOrders = async ({orders} : props) => {
+const ShowOrders = async ({orders, user} : props) => {
 
     const truncateText = (text: string, maxLength: number): string => {
       if (text.length <= maxLength) {
@@ -55,12 +56,25 @@ const ShowOrders = async ({orders} : props) => {
                               />
                             ) : null}
                           </div>
-                          <div className='flex flex-col'>
-                            <span className="text-white font-semibold text-lg">{product.name}</span>
-                            <span className="text-white">Precio: {price}</span>
-                            <span className="text-white">Cantidad: {quantity}</span>
-                            <span className="text-white">Subtotal: {price! * quantity!}</span>
-                          </div>
+                         
+                            {user?.customerType === 'customer' ?
+                            ( 
+                            <div className='flex flex-col'>
+                              <span className="text-white font-semibold text-lg">{product.name}</span>
+                              <span className="text-white">Precio: {product.price}</span>
+                              <span className="text-white">Cantidad: {quantity}</span>
+                              <span className="text-white">Subtotal: {product.price * quantity!}</span>
+                            </div>
+                            ): 
+                            ( 
+                            <div className='flex flex-col'>
+                              <span className="text-white font-semibold text-lg">{product.name}</span>
+                              <span className="text-white">Precio: {product.wholesalePrice}</span>
+                              <span className="text-white">Cantidad: {quantity}</span>
+                              <span className="text-white">Subtotal: {product.wholesalePrice * quantity!}</span>
+                            </div>
+                            ) 
+                            }
                         </li>
                       );
                     })}

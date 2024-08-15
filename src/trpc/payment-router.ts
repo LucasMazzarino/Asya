@@ -98,7 +98,7 @@ export const paymentRouter = router({
         .create({
           body:{
             items: lineItems,
-            notification_url:`https://886a-2800-a4-1b35-9700-301b-3185-37-238d.ngrok-free.app/payment`,
+            notification_url:`https://0b03-186-48-143-77.ngrok-free.app/payment`,
             back_urls: {
               success:`${process.env.NEXT_PUBLIC_SERVER_URL}/thank-you?orderId=${order.id}`,
               failure:`${process.env.NEXT_PUBLIC_SERVER_URL}/cart`,

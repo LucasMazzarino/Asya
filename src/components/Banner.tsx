@@ -18,7 +18,7 @@ const Banner = () => {
   }, []);
 
   const images = [
-    "https://asya.uy/mates.webp",
+    "https://asya.uy/matesbanner.webp",
     "https://asya.uy/platos.webp",
     "https://asya.uy/termos.webp",
     "https://asya.uy/tasas.webp"

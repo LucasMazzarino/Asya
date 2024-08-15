@@ -251,7 +251,6 @@ const CartPage = ({ user }: { user: User | null }) => {
 
             <div className='flex mt-6 justify-start items-center sm:flex-row flex-col gap-x-8'>
               <MercadoPagoButton />
-              <CashButton buttonName='Efectivo'/>
               <CashButton buttonName='Deposito'/>
             </div>
           </section>

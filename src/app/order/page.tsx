@@ -47,7 +47,7 @@ const orderPage = async () => {
             Tus ordenes
           </h4>
           {orders.length > 0 ? 
-            <ShowOrders orders={orders} /> :
+            <ShowOrders orders={orders} user={user}/> :
             <div className="flex flex-col items-center justify-center h-full font-semibold">
               <div className="border shadow-sm rounded-lg flex-1 flex items-center justify-center p-8 mb-4">
                 <div className="flex flex-col items-center gap-4">

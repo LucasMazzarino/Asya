@@ -184,6 +184,9 @@ export const OrderEmail = ({
           </Section>
           <Hr style={productPriceLineBottom} />
           <Text style={footerCopyright}>
+            Transferencia Brou: CA 000418716-00001. Deposito MiDinero nuemro de cuenta: 30367726 
+          </Text>
+          <Text style={footerCopyright}>
             ponte en contacto a nuestro <Link
             href='https://api.whatsapp.com/send?phone=596703656&text=Hola%2C%20realice%20un%20pedido%20en%Asya.'>WhathsApp </Link>
              y envía el comprobante de la transferencia.
@@ -355,7 +358,7 @@ const footerLinksWrapper = {
 }
 
 const footerCopyright = {
-  margin: '25px 0 0 0',
+  margin: '10px 0 0 0',
   textAlign: 'center' as const,
   fontSize: '12px',
   color: 'rgb(102,102,102)',
