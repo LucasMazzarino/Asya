@@ -56,7 +56,7 @@ export default function RootLayout({
         )}>
         <main className="relative flex flex-col min-h-screen bg-background">
           <Providers>
-          <Navbar  />
+          <Navbar />
             <div className="flex-grow flex-1">{children}</div>
             <Footer />
             <WhatsAppButton />
