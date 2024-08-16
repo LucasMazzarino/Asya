@@ -1,6 +1,6 @@
 import Link from 'next/link'
-import { LogoFb, LogoIg } from './Icons'
-import Footersvg from './Footersvg'
+// import { LogoFb, LogoIg } from './Icons'
+// import Footersvg from './Footersvg'
 
 const Contact = () => {
   return (
@@ -14,7 +14,7 @@ const Contact = () => {
         </nav>
       </div>
       <div className="mt-4 w-full">
-        <Footersvg />
+        {/* <Footersvg /> */}
       </div>
     </footer>
   )
