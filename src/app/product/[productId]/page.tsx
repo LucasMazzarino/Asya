@@ -60,7 +60,7 @@ const Page = async ({ params }: PageProps) => {
   const validUrls = product.images
     .map(({ image }) => {
       const imageUrl = typeof image === 'string' ? image : image?.url
-      return imageUrl ? imageUrl.replace('http://localhost:3000/media/', 'https://asya.uy/') : ''
+      return imageUrl ? imageUrl.replace('http://localhost:3000/media/', 'https://cdn.asya.uy/') : ''
     })
     .filter(Boolean) as string[]
   

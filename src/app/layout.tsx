@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     siteName: "Asya",
     images: [
       {
-        url: "https://asya.uy/favicon.ico",
+        url: "https://cdn.asya.uy/favicon.ico",
         width: 800,
         height: 600,
         alt: "Asya",

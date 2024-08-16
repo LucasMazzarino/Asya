@@ -82,7 +82,7 @@ const ProductReel = (props: ProductReelProps) => {
 
         {href ? (
           <Link
-            href='https://asya.uy/catalogo1sp.pdf'
+            href='https://cdn.asya.uy/catalogo1sp.pdf'
             target='_blank'
             rel='noopener noreferrer'
             className='hidden text-sm font-medium text-orange-500 hover:text-orange-600 md:block'>

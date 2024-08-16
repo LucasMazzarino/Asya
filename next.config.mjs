@@ -19,6 +19,10 @@ const nextConfig = {
 			},
 			{
 				protocol: "https",
+				hostname: "cdn.asya.uy",
+			},
+			{
+				protocol: "https",
 				hostname: "pub-3776ca07607e43cd95caba4dbe54049a.r2.dev",
 			},
 		],

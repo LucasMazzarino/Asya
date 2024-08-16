@@ -6,7 +6,7 @@ const AboutUs = () => {
       {/* Capa negra con opacidad */}
       <div className="absolute inset-0 z-10 bg-black opacity-40"></div>
       <Image 
-        src="https://asya.uy/tasas2.webp" 
+        src="https://cdn.asya.uy/tasas2.webp" 
         alt="about background" 
         quality={100}
         fill
@@ -18,7 +18,7 @@ const AboutUs = () => {
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center justify-center text-center">
             <Image
-              src="https://asya.uy/favicon3.ico"
+              src="https://cdn.asya.uy/favicon3.ico"
               alt="Favicon"
               width={140}
               height={140}
@@ -43,7 +43,7 @@ const AboutUs = () => {
       <section className="relative z-20 w-full py-12">
         <div className="container flex flex-col lg:flex-row items-center justify-center gap-8 px-4 text-center md:px-6 lg:text-left lg:gap-12">
           <Image
-            src="https://asya.uy/juanimarlogo.webp"
+            src="https://cdn.asya.uy/juanimarlogo.webp"
             alt="juanimar Logo"
             width={150}
             height={120}
@@ -63,7 +63,7 @@ const AboutUs = () => {
       <section className="relative z-20 w-full py-12">
         <div className="container flex flex-col lg:flex-row items-center justify-center gap-8 px-4 text-center md:px-6 lg:text-left lg:gap-12">
           <Image
-            src="https://asya.uy/cosechas2-nobg.webp"
+            src="https://cdn.asya.uy/cosechas2-nobg.webp"
             alt="Cosecha Logo"
             width={200}
             height={200}

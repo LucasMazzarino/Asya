@@ -100,7 +100,7 @@ const Cart = ({ user }: {user: User | null}) => {
               arial-hidden="True" 
               className='relative mb-5 h-52 w-60 text-muted-foreground'>
               <Image 
-                src="https://asya.uy/empty-cart.webp" 
+                src="https://cdn.asya.uy/empty-cart.webp" 
                 fill 
                 sizes="100vw"
                 alt="empty shopping" 

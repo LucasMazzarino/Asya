@@ -18,7 +18,7 @@ const CartItem = ({ product, count, userType}: CartItemProps) => {
 
   const imageUrl = typeof image === "string" 
   ? image 
-  : image.url?.replace('http://localhost:3000/media/', 'https://asya.uy/');
+  : image.url?.replace('http://localhost:3000/media/', 'https://cdn.asya.uy/');
 
 
   const subtotal = userType === 'Wholesale' ?

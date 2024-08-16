@@ -58,7 +58,7 @@ export const ReceiptEmail = ({
           <Section>
             <Column>
               <Img
-                src='https://asya.uy/favicon.ico'
+                src='https://cdn.asya.uy/favicon.ico'
                 width='100'
                 height='100'
                 alt='Asya'
@@ -123,7 +123,7 @@ export const ReceiptEmail = ({
             const { image } = product.images[0]
             const imageUrl = typeof image === "string" 
             ? image 
-            : image.url?.replace('http://localhost:3000/media/', 'https://asya.uy/');
+            : image.url?.replace('http://localhost:3000/media/', 'https://cdn.asya.uy/');
 
           return (
             <Section key={product.id}>

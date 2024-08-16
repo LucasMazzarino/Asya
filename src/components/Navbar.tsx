@@ -25,7 +25,7 @@ const Navbar = async () => {
             <div className="ml-4 flex lg:ml-0">
               <Link href='/'>
               <Image 
-                src="https://asya.uy/favicon3.ico"
+                src="https://cdn.asya.uy/favicon3.ico"
                 alt="Favicon"
                 width={70}
                 height={70}

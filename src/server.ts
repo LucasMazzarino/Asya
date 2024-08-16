@@ -54,7 +54,7 @@ const start = async () => {
     return
   }
 
-  const allowedOrigins = ['http://localhost:3000', 'https://www.asya.uy', 'https://asya.uy'];
+  const allowedOrigins = ['http://localhost:3000', 'https://www.asya.uy', 'https://asya.uy', 'https://cdn.asya.uy'];
   app.use(cors({
     origin: function (origin, callback) {
       if (!origin || allowedOrigins.includes(origin)) {

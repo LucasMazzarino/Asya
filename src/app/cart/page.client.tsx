@@ -55,7 +55,7 @@ const CartPage = ({ user }: { user: User | null }) => {
                 <div
                   aria-hidden
                   className="relative mb-4 h-40 w-40 text-white">
-                  <Image src='https://asya.uy/empty-cart-nobg.webp'
+                  <Image src='https://cdn.asya.uy/empty-cart-nobg.webp'
                     fill
                     sizes='100vw'
                     loading="eager"

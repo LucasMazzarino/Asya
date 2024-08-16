@@ -35,7 +35,7 @@ export const EmailTemplate = ({
         <Container style={container}>
         <Section style={logoContainer}>
             <Img
-              src='https://asya.uy/favicon.ico'
+              src='https://cdn.asya.uy/favicon.ico'
               width='300'
               height='300'
               alt='Asya'

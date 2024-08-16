@@ -37,7 +37,7 @@ const VerifyEmail = ({ token }: VerifyEmailProps) => {
       <div className='flex h-full flex-col items-center justify-center mb-10'>
         <div className='relative mb-4 h-90 w-90 text-muted-foreground'>
           <Image
-            src='https://asya.uy/verify-complete.webp'
+            src='https://cdn.asya.uy/verify-complete.webp'
             width='1400'
             height='1400'
             alt='email enviado'

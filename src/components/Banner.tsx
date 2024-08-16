@@ -18,10 +18,10 @@ const Banner = () => {
   }, []);
 
   const images = [
-    "https://asya.uy/matesbanner.webp",
-    "https://asya.uy/platos.webp",
-    "https://asya.uy/termos.webp",
-    "https://asya.uy/tasas.webp"
+    "https://cdn.asya.uy/matesbanner.webp",
+    "https://cdn.asya.uy/platos.webp",
+    "https://cdn.asya.uy/termos.webp",
+    "https://cdn.asya.uy/tasas.webp"
   ];
 
   useEffect(() => {

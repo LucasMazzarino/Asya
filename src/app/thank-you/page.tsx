@@ -136,7 +136,7 @@ const ThankYouPage = async ({ searchParams }: PageProps) => {
       </div>
       <div className="flex items-center justify-center w-full lg:w-1/2 p-8 bg-background">
         <Image
-          src="https://asya.uy/thank-younbg.webp"
+          src="https://cdn.asya.uy/thank-younbg.webp"
           alt="Thank you image"
           width={1000}
           height={600}
