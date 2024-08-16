@@ -98,7 +98,7 @@ export const paymentRouter = router({
         .create({
           body:{
             items: lineItems,
-            notification_url:`https://0b03-186-48-143-77.ngrok-free.app/payment`,
+            notification_url:`${process.env.NEXT_PUBLIC_SERVER_URL}/payment`,
             back_urls: {
               success:`${process.env.NEXT_PUBLIC_SERVER_URL}/thank-you?orderId=${order.id}`,
               failure:`${process.env.NEXT_PUBLIC_SERVER_URL}/cart`,
@@ -234,7 +234,7 @@ export const paymentRouter = router({
 
     const dataMe = await resend.emails.send({
       from: 'AsyaUruguay <servicio@asya.uy>',
-      to: ['luc.mazzarino@gmail.com'],
+      to: ['asyaweeb@gmail.com'],
       subject:
         'Un cliente realizo un nuevo pedido en Asya',
       html: MeEmailHtml({
