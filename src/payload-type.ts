@@ -65,7 +65,7 @@ export interface Product {
   description?: string | null;
   price: number;
   wholesalePrice: number;
-  category: 'hogar y cocina' | 'baño y cuidado personal' | 'construcción y decoración' | 'ropa y accesorios';
+  category: 'hogar y cocina' | 'baño y cuidado personal' | 'ropa y accesorios' | 'otros';
   quantity?: number | null;
   approvedForSale?: ('pending' | 'approved' | 'denied') | null;
   images: {
