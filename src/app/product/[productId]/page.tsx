@@ -36,7 +36,7 @@ const Page = async ({ params }: PageProps) => {
 
   const payload = await getPayloadClient()
 
-  const { docs: products } = await payload.find<Product>({
+  const { docs: products } = await payload.find({
     collection: 'products',
     limit: 1,
     where: {

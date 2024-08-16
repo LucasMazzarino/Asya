@@ -26,10 +26,10 @@ const AboutUs = () => {
             />
             <div className="space-y-2">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-orange-500">
-                'Pequeños cambios, grandes transformaciones'
+                Pequeños cambios, grandes transformaciones
               </h2>
               <h3 className="text-3xl font-bold tracking-tighter sm:text-4xl text-white">
-                'Es el significado de nuestro logo.'
+                Es el significado de nuestro logo.
               </h3>
               <p className="max-w-[900px] text-muted md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                 Nos identifica como una empresa que desde sus inicios ha apostado a realizar todo en forma 
