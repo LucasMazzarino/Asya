@@ -2,11 +2,10 @@
 
 import { TQueryValidator } from '@/lib/validators/query-validator'
 import { Product, User } from '../payload-type'
-import { useState, useEffect, ChangeEvent } from 'react';
+import { useState, useEffect } from 'react';
 import { trpc } from '@/trpc/client'
 import Link from 'next/link'
 import ProductListing from './ProductListing'
-import { Search } from 'lucide-react';
 
 
 interface ProductReelProps {

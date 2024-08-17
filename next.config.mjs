@@ -19,6 +19,10 @@ const nextConfig = {
 				protocol: "https",
 				hostname: "cdn.asya.uy",
 			},
+			{
+				protocol: "https",
+				hostname: "asya-production.up.railway.app",
+			},
 		],
   },
   logging: {
