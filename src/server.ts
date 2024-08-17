@@ -83,6 +83,43 @@ const start = async () => {
 
 
   app.use('/cart', cartRouter)
+
+  const signinRouter = express.Router()
+
+  signinRouter.use(payload.authenticate)
+
+  signinRouter.get('/', (req, res) => {
+    const request = req as PayloadRequest
+
+    if (request.user)
+      return res.redirect('/')
+
+    const parsedUrl = parse(req.url, true)
+    const { query } = parsedUrl
+
+    return nextApp.render(req, res, '/sign-in', query)
+  })
+
+  app.use('/sign-in', signinRouter)
+
+  const signupRouter = express.Router()
+
+  signupRouter.use(payload.authenticate)
+
+  signupRouter.get('/', (req, res) => {
+    const request = req as PayloadRequest
+
+    if (request.user)
+      return res.redirect('/')
+
+    const parsedUrl = parse(req.url, true)
+    const { query } = parsedUrl
+
+    return nextApp.render(req, res, '/sign-up', query)
+  })
+
+  app.use('/sign-up', signupRouter)
+
   app.use(
     '/api/trpc',
     trpcExpress.createExpressMiddleware({
