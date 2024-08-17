@@ -11,9 +11,6 @@ import { parse } from 'url'
 import cors from 'cors';
 
 
-
-
-
 const app = express()
 const PORT = Number(process.env.PORT) || 3000
 
@@ -54,7 +51,7 @@ const start = async () => {
     return
   }
 
-  const allowedOrigins = ['http://localhost:3000', 'https://www.asya.uy', 'https://asya.uy', 'https://cdn.asya.uy', 'asya-production.up.railway.app'];
+  const allowedOrigins = ['http://localhost:3000', 'https://www.asya.uy', 'https://asya.uy', 'https://cdn.asya.uy', 'asya-production.up.railway.app', 'https://asya-nine.vercel.app'];
   app.use(cors({
     origin: function (origin, callback) {
       if (!origin || allowedOrigins.includes(origin)) {
