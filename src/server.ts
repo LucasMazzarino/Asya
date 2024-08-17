@@ -51,7 +51,7 @@ const start = async () => {
     return
   }
 
-  const allowedOrigins = ['http://localhost:3000', 'https://www.asya.uy', 'https://asya.uy', 'https://cdn.asya.uy', 'https://asya-production.up.railway.app', 'https://asya-nine.vercel.app'];
+  const allowedOrigins = ['http://localhost:3000', 'https://www.asya.uy', 'https://asya.uy', 'https://cdn.asya.uy', 'https://asya-production.up.railway.app'];
   app.use(cors({
     origin: function (origin, callback) {
       if (!origin || allowedOrigins.includes(origin)) {
