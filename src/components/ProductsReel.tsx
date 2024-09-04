@@ -81,10 +81,10 @@ const ProductReel = (props: ProductReelProps) => {
 
         {href ? (
           <Link
-            href='https://cdn.asya.uy/catalogo1sp.pdf'
+            href={href}
             target='_blank'
             rel='noopener noreferrer'
-            className='hidden text-sm font-medium text-orange-500 hover:text-orange-600 md:block'>
+            className='text-sm font-medium text-orange-500 hover:text-orange-600 md:block'>
             Descarga aqui nuestro catalogo{' '}
             <span aria-hidden='true'>&rarr;</span>
           </Link>

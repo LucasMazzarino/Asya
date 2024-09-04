@@ -18,7 +18,7 @@ const ProductFilterPage = ({ user }: { user: User | null }) => {
 
   const productReelQuery: TQueryValidator = {
     sort: 'asc',
-    limit: 20,
+    limit: 65,
     ...(activeFilter && { category: activeFilter }), 
   };
 
