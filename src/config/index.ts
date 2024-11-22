@@ -15,9 +15,14 @@ export const PRODUCT_CATEGORIES = [
     value: 'ropa y accesorios' as const,
   },
   {
+    label: 'Bazar',
+    value: 'bazar' as const,
+  },
+  {
     label: 'Otros',
     value: 'otros' as const,
   },
+  
 ]
 
 export const ICONS_HOME = [
