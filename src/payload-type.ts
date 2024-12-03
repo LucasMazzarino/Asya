@@ -65,7 +65,7 @@ export interface Product {
   description?: string | null;
   price: number;
   wholesalePrice: number;
-  category: 'hogar y cocina' | 'baño y cuidado personal' | 'ropa y accesorios' | 'bazar' | 'otros';
+  category: 'termos y mates' | 'cepillos' | 'vasos térmicos' | 'ropa y accesorios' | 'bazar' | 'otros';
   quantity?: number | null;
   approvedForSale?: ('pending' | 'approved' | 'denied') | null;
   images: {

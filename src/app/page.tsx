@@ -15,7 +15,7 @@ const Home = async () => {
     <>
     <Banner />
       <MaxWidthWrapper>
-        <ProductsReel query={{ sort: "desc", limit: 35 }} user={user} title="Nuevos Productos" href="https://cdn.asya.uy/catalogo1sp.pdf" />
+        <ProductsReel query={{ sort: "desc", limit: 35 }} user={user} title="Nuevos Productos" href="https://cdn.asya.uy/CATALOGO1.pdf" href2='https://cdn.asya.uy/CATALOGO2.pdf' />
       </MaxWidthWrapper>
 
       <section className="border-t border-gray-500 w-full py-12 md:py-24 lg:py-32 bg-background">

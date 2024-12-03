@@ -12,6 +12,7 @@ interface ProductReelProps {
   title?: string
   subtitle?: string
   href?: string
+  href2?: string
   user?: User | null
   searchQuery?: string
   query: TQueryValidator
@@ -21,7 +22,7 @@ interface ProductReelProps {
 const FALLBACK_LIMIT = 8
 
 const ProductReel = (props: ProductReelProps) => {
-  const { title, subtitle, href, user, query, searchQuery, activeFilter } = props
+  const { title, subtitle, href, href2, user, query, searchQuery, activeFilter } = props
 
   const [filteredProducts, setFilteredProducts] = useState<Product[]>([]);
 
@@ -85,7 +86,17 @@ const ProductReel = (props: ProductReelProps) => {
             target='_blank'
             rel='noopener noreferrer'
             className='text-sm font-medium text-orange-500 hover:text-orange-600 md:block'>
-            Descarga aqui nuestro catalogo{' '}
+            Descargar catálogo termos y mates{' '}
+            <span aria-hidden='true'>&rarr;</span>
+          </Link>
+        ) : null}
+        {href2 ? (
+          <Link
+            href={href2}
+            target='_blank'
+            rel='noopener noreferrer'
+            className='text-sm font-medium text-orange-500 hover:text-orange-600 md:block'>
+            Descargrar catálogo bazar{' '}
             <span aria-hidden='true'>&rarr;</span>
           </Link>
         ) : null}

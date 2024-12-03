@@ -29,7 +29,7 @@ getInfiniteProducts: publicProcedure.input(z.object({
 
   const page = cursor || 1
 
-  const { docs: items, hasNextPage, nextPage } = await payload.find({
+    const { docs: items, hasNextPage, nextPage } = await payload.find({
     collection: "products",
     where: {
       approvedForSale: {
@@ -37,11 +37,11 @@ getInfiniteProducts: publicProcedure.input(z.object({
       },
       ...parsedQueryOpts,
     },
-    sort,
+    sort: "-name", // Ordenar alfabéticamente por defecto
     depth: 1,
     limit,
     page,
-  })
+  });
 
   return {
     items,

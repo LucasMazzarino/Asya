@@ -3,12 +3,16 @@ import React from "react";
 
 export const PRODUCT_CATEGORIES = [
   {
-    label: 'Hogar y Cocina',
-    value: 'hogar y cocina' as const,
+    label: "Termos y Mates",
+    value: "termos y mates",
   },
   {
-    label: 'Baño y cuidado personal',
-    value: 'baño y cuidado personal' as const,
+    label: 'Cepillos',
+    value: 'cepillos' as const,
+  },
+  {
+    label: 'Vasos Térmicos',
+    value: 'vasos térmicos' as const,
   },
   {
     label: 'Ropa y Accesorios',
