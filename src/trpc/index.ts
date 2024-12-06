@@ -37,7 +37,7 @@ getInfiniteProducts: publicProcedure.input(z.object({
       },
       ...parsedQueryOpts,
     },
-    sort: "-name", // Ordenar alfabéticamente por defecto
+    sort: "-price",
     depth: 1,
     limit,
     page,
